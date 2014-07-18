@@ -1,6 +1,7 @@
 class Aldente < Sinatra::Base
 
   get '/' do
+    session[:name] = 'dave'
     content_type :html
     send_file 'index.html'
   end

@@ -1,4 +1,5 @@
 guard 'puma', :port => 5000 do
   watch('Gemfile.lock')
-  watch(%r{^config|app.rb})
+  watch('config.ru')
+  watch(%r{^modules|models/(.+)\.rb$})
 end
