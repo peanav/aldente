@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'puma'
 gem 'sass'
 gem 'warden'
+gem 'bcrypt'
 
 group :development do
   gem 'guard'

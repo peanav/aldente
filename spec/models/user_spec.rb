@@ -9,7 +9,10 @@ describe User do
 
   end
   it 'should authenticate' do
-    p @user
     @user.authenticate('pnavasard@gmail.com', '123456').must_equal true
+  end
+
+  it 'should create a hash when a password is set' do
+    @user.password_hash.must_be_kind_of BCrypt::Password
   end
 end
