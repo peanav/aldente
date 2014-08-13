@@ -1,4 +1,5 @@
 class Aldente < Sinatra::Base
+  set :root, Proc.new { File.expand_path('..', File.dirname(__FILE__)) }
 
   get '/' do
     redirect 'auth' unless env['warden'].authenticated?
