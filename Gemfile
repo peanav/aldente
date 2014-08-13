@@ -5,6 +5,9 @@ gem 'puma'
 gem 'sass'
 gem 'warden'
 gem 'bcrypt'
+gem 'sequel'
+gem 'pg'
+gem 'uuid'
 
 group :development do
   gem 'guard'

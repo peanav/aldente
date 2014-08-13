@@ -20,12 +20,7 @@ class Auth < Sinatra::Base
   Warden::Strategies.add(:password) do
     def authenticate!
       p params
-      user = User.new({
-        id: "1",
-        email: 'pnavasard@gmail.com',
-        password: '123456'
-      })
-
+      user = User.get_by_email params['email']
       if user.authenticate(params['email'], params['password'])
         p 'yes'
         success!(user)

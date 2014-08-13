@@ -24,6 +24,8 @@ Warden::Manager.before_failure do |env,opts|
   env['REQUEST_METHOD'] = 'POST'
 end
 
+DB = Sequel.connect('postgres://localhost/aldente')
+
 map '/' do
   run Aldente
 end
