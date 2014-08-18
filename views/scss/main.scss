@@ -25,7 +25,10 @@ body {
 
   @include part(title) {
     display: inline-block;
-    color: #fff;
+    color: $headerColor;
+    background: url(/images/AlDente.png) 50% 50% no-repeat;
+    height: $headerHeight;
+    width: 194px;
   }
 
   @include part(user) {
