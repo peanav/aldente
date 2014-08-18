@@ -1,5 +1,36 @@
-$color: #ff0000;
+@import 'cssstyle';
+
+$color: #fff;
+
+$headerColor: #4A4A4A;
+$headerHeight: 50px;
 
 body {
   background: $color;
+}
+
+@include component(app) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+@include component(header) {
+  background: $headerColor;
+  height: $headerHeight;
+  text-align: center;
+
+  @include part(title) {
+    display: inline-block;
+    color: #fff;
+  }
+
+  @include part(user) {
+    display: inline-block;
+    float: right;
+  }
+
 }

@@ -1,0 +1,19 @@
+{
+  "name": "aldente",
+  "version": "0.0.0",
+  "homepage": "https://github.com/peanav/aldente",
+  "authors": [
+    "Paul Navasard <paul.navasard@domo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.11.1"
+  }
+}

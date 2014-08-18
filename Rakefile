@@ -1,5 +1,8 @@
-require "sequel"
+Bundler.require
 require 'rake/testtask'
+
+# Pull in the Models
+Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 
 namespace :db do
   namespace :migrate do

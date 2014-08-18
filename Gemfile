@@ -8,6 +8,7 @@ gem 'bcrypt'
 gem 'sequel'
 gem 'pg'
 gem 'uuid'
+gem 'slim'
 
 group :development do
   gem 'guard'
