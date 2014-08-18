@@ -2,4 +2,4 @@
 vendor/
 .bundle/
 *.swp
-*.DS_Dtore
+.DS_Store
