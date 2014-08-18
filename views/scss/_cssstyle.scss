@@ -9,14 +9,14 @@
 // Specificity: 0010 when used by itself,
 // 0030 when used inside with a modifier
 @mixin part($name){
-  & &__#{$name}{
+  & &_#{$name}{
     @content
   }
 }
 
 
 @mixin option($name){
-  &.\--#{$name}{
+  &.\-#{$name}{
     @content;
   }
 }
@@ -26,12 +26,12 @@
 // can use & in sassscript so we won't have to pass parent and part
 @mixin whenParentOption($option, $parent, $part){
   
-  @at-root .#{$parent}.\--#{$option} .#{$parent}__#{$part} {
+  @at-root .#{$parent}.\-#{$option} .#{$parent}_#{$part} {
     @content;
   }
 
   // future version
-  // $withParent: str-insert(#{&}, ".\--#{$option}", 8);
+  // $withParent: str-insert(#{&}, ".\-#{$option}", 8);
   // @at-root #{$withParent} {
   //   @content;
   // }

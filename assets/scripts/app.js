@@ -3,17 +3,11 @@
 var React = require('../vendor/react/react.js');
 var Header = require('./header.jsx');
 
-var user = {
-  first_name: 'Paul',
-  last_name: 'Navasard',
-  email: 'pnavasard@gmail.com'
-};
-
 var alDente = React.createClass({displayName: 'alDente',
   render: function() {
     return (
       React.DOM.div({className: "app"}, 
-        Header({user: user})
+        Header({user: this.props.user})
       )
     );
   }
@@ -27,11 +21,10 @@ var React = require('../vendor/react/react.js');
 
 var Header = React.createClass({displayName: 'Header',
   render: function() {
-    console.log(this.props);
     return (
       React.DOM.div({className: "header"}, 
-        React.DOM.div({className: "header__title"}, "alDente"), 
-        React.DOM.div({className: "header__user"}, 
+        React.DOM.div({className: "header_title"}, "alDente"), 
+        React.DOM.div({className: "header_user"}, 
           React.DOM.img({src: this.props.user.gravatar_image_url})
         )
       )
@@ -47,7 +40,7 @@ var React = require('./vendor/react/react.js');
 
 var alDente = require('./components/alDente.jsx');
 
-React.renderComponent(alDente(null), document.querySelector('.app'));
+React.renderComponent(alDente({user: user}), document.querySelector('.app'));
 
 },{"./components/alDente.jsx":"/Users/paulnavasard/code/personal/aldente/assets/scripts/components/alDente.jsx","./vendor/react/react.js":"/Users/paulnavasard/code/personal/aldente/assets/scripts/vendor/react/react.js"}],"/Users/paulnavasard/code/personal/aldente/assets/scripts/vendor/react/react.js":[function(require,module,exports){
 (function (global){

@@ -29,8 +29,17 @@ body {
   }
 
   @include part(user) {
-    display: inline-block;
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    img {
+      $imageHeight: $headerHeight - 10;
+      height: $imageHeight;
+      width: $imageHeight;
+      border-radius: $imageHeight / 2;
+      margin: 5px 10px;
+    }
   }
 
 }
