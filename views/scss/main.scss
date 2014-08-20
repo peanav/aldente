@@ -5,8 +5,37 @@ $color: #fff;
 $headerColor: #4A4A4A;
 $headerHeight: 50px;
 
+$heroHeight: 400px;
+
 body {
   background: $color;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+@include component(grid_3) {
+  display: flex;
+  justify-content: center;
+
+  @include part(cell_1) {
+    display: inline-block;
+    width: 260px;
+    margin: 0 30px;
+  }
+
+  @include part(cell_2) {
+    display: inline-block;
+    width: 520px;
+    margin: 0 15px;
+    vertical-align: top;
+  }
+}
+
+@include location(hero) {
+  @include component(grid_3) {
+    align-items: center;
+    height: $heroHeight;
+  }
 }
 
 @include component(app) {
@@ -26,7 +55,7 @@ body {
   @include part(title) {
     display: inline-block;
     color: $headerColor;
-    background: url(/images/AlDente.png) 50% 50% no-repeat;
+    background: url(/images/AlDente.svg) 50% 50% no-repeat;
     height: $headerHeight;
     width: 194px;
   }
@@ -44,5 +73,62 @@ body {
       margin: 5px 10px;
     }
   }
+}
 
+@include component(recipe_detail) {
+  position: relative;
+
+  @include part(hero) {
+    height: $heroHeight;
+    color: #fff;
+    overflow: hidden;
+
+
+    img {
+      width: 100%;
+      top: 0;
+    }
+
+    h1 {
+      font-weight: 100;
+      font-size: 44px;
+      margin: -10px 0 10px;
+    }
+
+    .prep_time, .tags {
+      line-height: 16px;
+      padding: 0 25px;
+      font-size: 14px;
+    }
+    .prep_time { background: url(/images/timer.svg) no-repeat 0 50%; }
+    .tags { background: url(/images/tags.svg) no-repeat 0 50%; }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      padding-right: 5px;
+    }
+
+  }
+
+  @include part(hero_image) {
+    margin-top: -25px;
+    height: $heroHeight + 50;
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-filter: blur(40px);
+  }
+
+  @include part(hero_info) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: $heroHeight;
+  }
+}
+
+@include tweak(shadow) {
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
